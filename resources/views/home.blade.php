@@ -7,8 +7,8 @@
     <thead>
         <tr>
             <th>Código</th>
-            <th>Cliente</th>
             <th>Livro</th>
+            <th>Cliente</th>
             <th>Categoria</th>
             <th>Status</th>
             <th>Previsão de Entrega</th>
@@ -17,8 +17,8 @@
     <tbody>
         <tr>
             <td>1</td>
-            <td>João dos Santos</td>
             <td>Peter Pan</td>
+            <td>João dos Santos</td>
             <td>Conto Infantil</td>
             <td>Emprestado</td>
             <td>30/11/2019</td>

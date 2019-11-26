@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/authors', 'AuthorController@index');
+Route::get('/books', 'BookController@index');
+Route::get('/clients', 'ClientController@index');
+Route::get('/categories', 'CategoryController@index');
+Route::get('/borrows', 'BorrowController@index');
