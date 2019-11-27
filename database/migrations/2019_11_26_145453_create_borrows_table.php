@@ -15,6 +15,28 @@ class CreateBorrowsTable extends Migration
     {
         Schema::create('borrows', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->binary('status');
+            $table->bigInteger('books_id')->unsigned();;
+            $table->bigInteger('clients_id')->unsigned();;
+            $table->bigInteger('categories_id')->unsigned();;
+            
+            $table->foreign('books_id')
+                ->references('id')
+                ->on('books')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            
+            $table->foreign('clients_id')
+                ->references('id')
+                ->on('clients')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            
+            $table->foreign('categories_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

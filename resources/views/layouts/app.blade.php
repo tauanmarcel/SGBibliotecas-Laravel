@@ -11,10 +11,10 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="col3">
+			<div class="col-3">
 				@include('layouts.menu')
 			</div>
-			<div class="col9 mt-2">
+			<div class="col-9 mt-2">
 				@yield('content')
 			</div>
 		</div>

@@ -11,15 +11,35 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+//Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
+/** Rotas para o autor */
+Route::group(['prefix' => 'authors'], function () {
+	Route::get('/', 'AuthorController@index');
+	Route::match(['get', 'post'],'/create', 'AuthorController@create');
+	Route::match(['get', 'post'],'/update/{id}', 'AuthorController@update');
+	Route::get('/profile/{id}', 'AuthorController@show');
 });
 
-Auth::routes();
+Route::group(['prefix' => 'books'], function(){
+	Route::get('/', 'BookController@index');
+	Route::match(['get', 'post'],'/create', 'BookController@create');
+	Route::match(['get', 'post'],'/update/{id}', 'BookController@update');
+	Route::get('/abstract/{id}', 'BookController@show');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/authors', 'AuthorController@index');
-Route::get('/books', 'BookController@index');
+});
+
+Route::group(['prefix' => 'categories'], function(){
+	Route::get('/', 'CategoryController@index');
+	Route::match(['get', 'post'],'/create', 'CategoryController@create');
+	Route::match(['get', 'post'],'/update/{id}', 'CategoryController@update');
+});
+
 Route::get('/clients', 'ClientController@index');
-Route::get('/categories', 'CategoryController@index');
 Route::get('/borrows', 'BorrowController@index');
