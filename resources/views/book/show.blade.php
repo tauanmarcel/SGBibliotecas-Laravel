@@ -3,6 +3,11 @@
 <center class="pt-3 pb-3"><h1>{{ $pageTitle }}</h1></center>
 
 @section('content')
+
+<div class="table mb-5">
+    <a href="javascript:history.back()" class="btn btn-secondary float-right">Voltar</a>
+</div>
+
 <div class="container">
     <div class="row">
             <div class="col-3 p-2">

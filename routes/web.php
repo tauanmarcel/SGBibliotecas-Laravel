@@ -27,6 +27,7 @@ Route::group(['prefix' => 'authors'], function () {
 	Route::get('/profile/{id}', 'AuthorController@show');
 });
 
+/** Rotas para livros */
 Route::group(['prefix' => 'books'], function(){
 	Route::get('/', 'BookController@index');
 	Route::match(['get', 'post'],'/create', 'BookController@create');
@@ -35,11 +36,20 @@ Route::group(['prefix' => 'books'], function(){
 
 });
 
+/** Rotas para categorias */
 Route::group(['prefix' => 'categories'], function(){
 	Route::get('/', 'CategoryController@index');
 	Route::match(['get', 'post'],'/create', 'CategoryController@create');
 	Route::match(['get', 'post'],'/update/{id}', 'CategoryController@update');
 });
 
-Route::get('/clients', 'ClientController@index');
+/** Rotas para clientes */
+Route::group(['prefix' => 'clients'], function(){
+	Route::get('/', 'ClientController@index');
+	Route::match(['get', 'post'],'/create', 'ClientController@create');
+	Route::match(['get', 'post'],'/update/{id}', 'ClientController@update');
+	Route::get('/profile/{id}', 'ClientController@show');
+});
+
+
 Route::get('/borrows', 'BorrowController@index');

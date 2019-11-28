@@ -3,7 +3,10 @@
 <center class="pt-3 pb-3"><h1>{{$pageTitle}}</h1></center>
 
 @section('content')
+
 <a href="authors/create" class="btn btn-primary float-right mb-3">Novo</a>
+<a href="javascript:history.back()" class="btn btn-secondary float-right mb-3 mr-2">Voltar</a>
+
 <table class="table">
     <thead>
         <tr>

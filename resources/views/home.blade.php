@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<center class="pt-3 pb-3"><h1>Dashboard</h1></center>
+<center class="pt-3 pb-3"><h1>Home</h1></center>
 
 @section('content')
 <table class="table">
