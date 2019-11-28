@@ -4,6 +4,7 @@
 
 @section('content')
 <a href="books/create" class="btn btn-primary float-right mb-3">Novo</a>
+<a href="javascript:history.back()" class="btn btn-secondary float-right mb-3 mr-2">Voltar</a>
 <table class="table">
     <thead>
         <tr>

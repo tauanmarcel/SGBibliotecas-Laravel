@@ -4,6 +4,10 @@
 
 @section('content')
 
+<div class="table mb-5">
+    <a href="javascript:history.back()" class="btn btn-secondary float-right">Voltar</a>
+</div>
+
 @include('layouts.response')
 
 <form method="post" enctype="multipart/form-data">
@@ -44,7 +48,7 @@
             </div>
             <div class="form-group col-6"> 
                 <label for="cover">Capa</label><br>
-                 @if($book->cover)
+                @if($book->cover)
                     <img src="{{url('storage/'. $book->cover)}}" alt="{{ $author->name }}" width="50" class="mb-2">
                 @endif
                 <input type="file" name="cover" class="form-control-file" id="cover">

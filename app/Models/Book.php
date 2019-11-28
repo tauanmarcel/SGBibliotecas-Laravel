@@ -16,10 +16,10 @@ class Book extends Model{
 	];
 
 	public function author(){
-		return $this->hasOne('App\Models\Author', 'id');
+		return $this->belongsTo('App\Models\Author', 'authors_id');
 	}
 
 	public function category(){
-		return $this->hasOne('App\Models\Category', 'id');
+		return $this->belongsTo('App\Models\Category', 'categories_id');
 	}
 }

@@ -71,8 +71,6 @@ class AuthorController extends Controller{
                     'message' => $e->getMessage(),
                     'error' => true
                 ];
-
-    			return View('author.create', compact('response'));
     		}
     	}
 
