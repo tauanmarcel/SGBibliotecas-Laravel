@@ -9,7 +9,7 @@ use Exception;
 use DB;
 use Storage;
 
-class AuthorController extends Controller{
+class AuthorController extends Controller {
 
 	private $author;
 
@@ -22,7 +22,7 @@ class AuthorController extends Controller{
 
     	$authors = $this->author->get();
 
-    	return View('Author.index', compact('pageTitle', 'authors'));
+    	return View('author.index', compact('pageTitle', 'authors'));
     }
 
     public function create(Request $request){

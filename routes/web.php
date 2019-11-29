@@ -51,5 +51,13 @@ Route::group(['prefix' => 'clients'], function(){
 	Route::get('/profile/{id}', 'ClientController@show');
 });
 
+/** Rotas para empréstimos */
+Route::group(['prefix' => 'borrows'], function(){
+	Route::get('/', 'BorrowController@index');
+	Route::match(['get', 'post'],'/create', 'BorrowController@create');
+	Route::match(['get', 'post'],'/update/{id}', 'BorrowController@update');
+	Route::get('/profile/{id}', 'BorrowController@show');
+});
+
 
 Route::get('/borrows', 'BorrowController@index');

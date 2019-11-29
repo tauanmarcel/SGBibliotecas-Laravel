@@ -25,20 +25,20 @@
         </div>
         <div class="row">
             <div class="form-group col-6">
-                <label for="authors_id">Autor</label>
-                <select name="authors_id" id="authors_id" class="form-control" required>
+                <label for="clients_id">Cliente</label>
+                <select name="clients_id" id="clients_id" class="form-control" required>
                     <option>Selecione</option>
-                    @foreach($authors as $author)
-                    <option value="{{ $author->id }}">{{ $author->name }}</option>
+                    @foreach($clients as $client)
+                    <option value="{{ $client->id }}">{{ $client->name }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="form-group col-6">
-                <label for="categories_id">Categoria</label>
-                <select name="categories_id" id="categories_id" class="form-control" required>
+                <label for="books_id">Livro</label>
+                <select name="books_id" id="books_id" class="form-control" required>
                     <option>Selecione</option>
-                    @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->title }}</option>
+                    @foreach($books as $book)
+                    <option value="{{ $book->id }}">{{ $book->title }}</option>
                     @endforeach
                 </select>
             </div>
