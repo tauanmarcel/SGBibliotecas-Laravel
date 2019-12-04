@@ -32,13 +32,75 @@ class BorrowController extends Controller {
     	return View('borrow.index', compact('pageTitle', 'borrows'));
     }
 
-    public function create(){
+    public function create(Request $request){
 
         $pageTitle = "Novo Empréstimo";
 
         $clients = $this->client->get(); 
-        $books = $this->book->get(); 
+        $books = $this->book->get();
 
-    	return View('borrow.create', compact('pageTitle', 'clients', 'books'));
+        if($request->all()){
+            DB::beginTransaction();
+
+            
+            try{
+                if(!$this->borrow->create($request->all())){
+                    throw new Exception('Não foi possível salvar o novo empréstimo');
+                }
+                
+                $response = [
+                    'message' => 'Empréstimo realizado com sucesso!',
+	    			'error' => false
+                ];
+                
+                DB::commit();
+            }catch(Exception $e){
+                DB::rollBack();
+                
+				$response = [
+	    			'message' => $e->getMessage(),
+	    			'error' => true
+	    		];
+            }
+        }
+
+    	return View('borrow.create', compact('pageTitle', 'clients', 'books', 'response'));
+    }
+
+    public function  update($id, Request $request){
+        $pageTitle = "Editar Empréstimo";
+
+        $borrow = $this->borrow->with($this->relationships)->find($id);
+        $clients = $this->client->get(); 
+        $books = $this->book->get();
+
+        if($request->all()){
+            DB::beginTransaction();
+
+            
+            try{
+                if(!$borrow->update(['books_id' => $request->books_id])){
+                    throw new Exception('Não foi possível salvar o novo empréstimo');
+                }
+                
+                $response = [
+                    'message' => 'Empréstimo realizado com sucesso!',
+	    			'error' => false
+                ];
+                
+                DB::commit();
+                $borrow = $this->borrow->with($this->relationships)->find($id);
+                
+            }catch(Exception $e){
+                DB::rollBack();
+                
+				$response = [
+	    			'message' => $e->getMessage(),
+	    			'error' => true
+	    		];
+            }
+        }
+
+    	return View('borrow.update', compact('pageTitle', 'clients', 'books', 'response', 'borrow'));
     }
 }

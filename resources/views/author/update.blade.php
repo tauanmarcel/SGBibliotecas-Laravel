@@ -4,6 +4,10 @@
 
 @section('content')
 
+<div class="table mb-5">
+    <a href="javascript:history.back()" class="btn btn-secondary float-right">Voltar</a>
+</div>
+
 @include('layouts.response')
 
 <form method="post" enctype="multipart/form-data">

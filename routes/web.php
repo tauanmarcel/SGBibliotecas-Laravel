@@ -17,7 +17,7 @@
 
 //Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'BorrowController@index')->name('home');
 
 /** Rotas para o autor */
 Route::group(['prefix' => 'authors'], function () {
