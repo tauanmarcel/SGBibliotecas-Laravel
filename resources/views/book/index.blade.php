@@ -26,8 +26,8 @@
                     <td>{{ $book->category->title }}</td>
                     <td>{{ $book->year_publication }}</td>
                     <td>
-                        <a href="books/update/{{ $book->id }}">Editar</a>
-                        <a href="#">Excluir</a>
+                        <a href="books/update/{{ $book->id }}" class="mr-1"><i class="material-icons">edit</i></a>
+                        <a href="" class="delete text-danger"><i class="material-icons">delete</i></a>
                     </td>
                 </tr>
             @endforeach

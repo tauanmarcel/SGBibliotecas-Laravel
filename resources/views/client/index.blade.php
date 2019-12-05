@@ -26,8 +26,8 @@
                     <td>{{ $client->phone }}</td>
                     <td>{{ $client->age }}</td>
                     <td>
-                        <a href="clients/update/{{ $client->id }}">Editar</a>
-                        <a href="#">Excluir</a>
+                        <a href="clients/update/{{ $client->id }}" class="mr-1"><i class="material-icons">edit</i></a>
+                        <a href="#" class="delete text-danger"><i class="material-icons">delete</i></a>
                     </td>
                 </tr>
             @endforeach

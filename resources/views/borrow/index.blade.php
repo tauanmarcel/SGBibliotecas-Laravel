@@ -28,8 +28,7 @@
                     <td>{{ $borrow->date_devolution }}</td>
                     <td class="{{ $borrow->status ? ' text-danger' : 'text-info' }}">{{ $borrow->status ? 'Emprestado' : 'Devolvido' }}</td>
                     <td>
-                        <a href="borrows/update/{{ $borrow->id }}">Editar</a>
-                        <a href="#">Excluir</a>
+                        <a href="borrows/update/{{ $borrow->id }}"><i class="material-icons">edit</i></a>
                     </td>
                 </tr>
             @endforeach

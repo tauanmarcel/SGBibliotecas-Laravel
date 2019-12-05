@@ -22,8 +22,8 @@
                 <td>{{ $category->id }}</td>
                 <td>{{ $category->title }}</td>
                 <td>
-                    <a href="categories/update/{{ $category->id }}">Editar</a>
-                    <a href="#">Excluir</a></p>
+                    <a href="categories/update/{{ $category->id }}" class="mr-1"><i class="material-icons">edit</i></a>
+                    <a href="#" class="delete text-danger"><i class="material-icons">delete</i></a></p>
                 </td>
             </tr>
         @endforeach

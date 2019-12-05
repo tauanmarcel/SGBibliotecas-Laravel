@@ -71,20 +71,21 @@ class BorrowController extends Controller {
         $pageTitle = "Editar Empréstimo";
 
         $borrow = $this->borrow->with($this->relationships)->find($id);
-        $clients = $this->client->get(); 
-        $books = $this->book->get();
 
         if($request->all()){
             DB::beginTransaction();
-
             
             try{
-                if(!$borrow->update(['books_id' => $request->books_id])){
+                if(!$borrow->status){
+                    throw new Exception('O livro não pode ser reemprestado. Faça um novo empréstimo.');
+                }
+
+                if(!$borrow->update(['status' => $request->status])){
                     throw new Exception('Não foi possível salvar o novo empréstimo');
                 }
                 
                 $response = [
-                    'message' => 'Empréstimo realizado com sucesso!',
+                    'message' => 'Empréstimo alterado com sucesso!',
 	    			'error' => false
                 ];
                 
@@ -101,6 +102,6 @@ class BorrowController extends Controller {
             }
         }
 
-    	return View('borrow.update', compact('pageTitle', 'clients', 'books', 'response', 'borrow'));
+    	return View('borrow.update', compact('pageTitle', 'response', 'borrow'));
     }
 }

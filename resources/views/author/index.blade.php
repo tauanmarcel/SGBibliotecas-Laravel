@@ -24,8 +24,12 @@
             <td><a href="authors/profile/{{ $author->id }}">{{ $author->name }}</a></td>
             <td><a href="books-author/{{ $author->id }}">Publicações</a></td>
             <td>
-                <a href="authors/update/{{ $author->id }}">Editar</a>
-                <a href="authors/{{ $author->id }}">Excluir</a>
+                <a class="mr-1" href="authors/update/{{ $author->id }}">
+                    <i class="material-icons">edit</i>
+                </a>
+                <a class="delete text-danger" href="authors/{{ $author->id }}">
+                    <i class="material-icons">delete</i>
+                </a>
             </td>
         </tr>
         @endforeach
