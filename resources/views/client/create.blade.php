@@ -26,11 +26,11 @@
         <div class="row">   
             <div class="form-group col-6">
                 <label for="phone">Telefone</label>
-                <input name="phone" id="phone" class="form-control" required>
+                <input name="phone" id="phone" class="form-control cel_phone" required>
             </div>
             <div class="form-group col-6">
                 <label for="birth">Data de Nascimento</label>
-                <input name="birth" id="birth" class="form-control" required>
+                <input name="birth" id="birth" class="form-control date datepicker" autocomplete="off" required>
             </div>
         </div>
         <div class="form-group">

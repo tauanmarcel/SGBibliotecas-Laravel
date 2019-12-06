@@ -7,6 +7,15 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<!-- Mask https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html#using-html-notation-examples -->
+	<script src="{{ @asset('js/jquery.mask.js') }}"></script>
+
+	<!-- Datepicker Documentação: https://api.jqueryui.com/datepicker/#option-dateFormat -->
+   <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+   <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+
+
 	<script src="{{ @asset('js/main.js') }}"></script>
 
 	<title>Home - Biblioteca</title>
