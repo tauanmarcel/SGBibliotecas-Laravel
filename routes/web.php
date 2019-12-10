@@ -58,6 +58,3 @@ Route::group(['prefix' => 'borrows'], function(){
 	Route::match(['get', 'post'],'/update/{id}', 'BorrowController@update');
 	Route::get('/profile/{id}', 'BorrowController@show');
 });
-
-
-Route::get('/borrows', 'BorrowController@index');

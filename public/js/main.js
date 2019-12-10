@@ -22,4 +22,40 @@ $(document).ready(function(){
          return false;
       }
    });
+
+   $(".states").change(function(){
+
+		console.log(window.base_url);
+
+		var uf = $(this).val();
+
+		$.ajax({
+			type: 'get',
+			url: '../js/cities.json',
+			dataType: 'json',
+
+			success: function(response){
+				options = "<option>Selecione</option>";
+				estados = response.estados;
+
+				Object.keys(estados).forEach(function(k){
+					if(estados[k].sigla == uf){
+						cidades = estados[k].cidades;
+						Object.keys(cidades).forEach(function(k){
+							options += "<option value='"+ cidades[k] +"'>"+ cidades[k] +"</option>"
+						});
+					}
+				});
+
+				$(".cities").html(options);
+			},
+
+			error: function(){
+				alert("Erro ao carregar lista de estados");
+			}
+
+		});
+
+	});
+
 });
